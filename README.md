@@ -74,3 +74,8 @@ ssh -i ~/.ssh/gcekey GMAIL_ACOUNT@GCE_EXTERNAL_IP
 - Now follow the steps can access the VM machine from vscode now (At least I can do it since the detail steps are too long to go.)
 
 ## Backend structure
+
+<p align="center">
+<img src="https://github.com/blaticslm/simple-tweet-project/blob/main/repo%20picture/Untitled%20Diagram.drawio.png">
+
+</p>
