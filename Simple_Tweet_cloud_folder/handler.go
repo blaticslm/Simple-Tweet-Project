@@ -57,7 +57,7 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
     //暂时就三个初始化
     //From now on, the user info will directly come from payload.
     p := Post{
-        Id: uuid.New(), //universally unique identifier
+        Id: username.(string) + uuid.New(), //universally unique identifier
         User: username.(string), //func (r *Request) FormValue(key string) string
         Message: r.FormValue("message"),
     }
@@ -256,6 +256,7 @@ func deleteHandler(w http.ResponseWriter, r *http.Request) {
     username := claims.(jwt.MapClaims)["username"].(string)
     id := mux.Vars(r)["id"]
 
+
     err_ES, err_GCS := deletePost(id, username)
 
     if err_ES != nil && err_GCS == nil {
@@ -266,7 +267,11 @@ func deleteHandler(w http.ResponseWriter, r *http.Request) {
         http.Error(w, "Failed to delete File from GCS. File may not exist.", http.StatusInternalServerError)
         fmt.Printf("Failed to delete post from GCS %v\n", err_GCS)
 
-    } else {
+    } else if err_ES != nil && err_GCS != nil {
+        http.Error(w, "Username does not match the post or both servers are gone, delete fail!", http.StatusInternalServerError)
+        fmt.Printf("Id does not match to username or both servers are done!")
+
+    }else {
         fmt.Println("Post is deleted totally successfully")
     }
 

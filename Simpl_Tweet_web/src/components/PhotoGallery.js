@@ -61,13 +61,25 @@ function PhotoGallery(props) {
 
     const onDeletePost = () => {
 
+        if(imageArr.length === 0) {
+            window.confirm(`There is no image to delete in the gallery!`)
+            return;
+        }
+
         if (window.confirm(`Are you sure you want to delete this Post?`)) {
             //step 1: get image with post to be deleted
             //step 2: remove the image from image array
             //step 3: send delete request
 
-            const currentImage = imagesArr[curImageIndex]
-            const newImageArr = imagesArr.filter((image, index) => index !== curImageIndex) //filtering out the image that does not have designate index
+            let current_index = curImageIndex;
+            let currentImage = imagesArr[current_index];
+            //this is for dealing with the defects of the gallery: gallery is still in backdrop after deleting
+            while(currentImage === undefined) {
+                current_index--;
+                currentImage = imagesArr[current_index];
+            }
+            setCurImageIndex(current_index)
+            const newImageArr = imagesArr.filter((image, index) => index !== current_index) //filtering out the image that does not have designate index
 
             const option = {
                 method: "DELETE",
@@ -93,7 +105,6 @@ function PhotoGallery(props) {
 
 
     const onCurrentImageChange = (index) => {
-        console.log(index)
         setCurImageIndex(index); //当前点击的图片的index
         try{
             setPostUser(imagesArr[index].user);

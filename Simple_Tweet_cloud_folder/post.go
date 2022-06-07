@@ -6,6 +6,12 @@ import(
     "mime/multipart"
 
     "github.com/olivere/elastic/v7"
+
+    "strings"
+
+    "fmt"
+
+    "errors"
 )
 
 const (
@@ -107,9 +113,15 @@ func savePost(post *Post, file multipart.File) error {
 
 func deletePost(post_id string, username string) (error, error) {
 
+    fmt.Println(post_id, username)
+
     query := elastic.NewBoolQuery()
-    query.Must(elastic.NewTermQuery("id", post_id))
-    query.Must(elastic.NewTermQuery("user", username))
+    query.Must(elastic.NewTermQuery("id", post_id)) //username0dgsdsd-asd-ddf
+    query.Must(elastic.NewTermQuery("user", username))//username
+
+    if !strings.Contains(post_id, username) {
+        return errors.New("does not match"), errors.New("does not match")
+    }
 
     err_ES := deleteFromES(query, POST_INDEX)
     err_GCS := deleteFromGCS(post_id)
