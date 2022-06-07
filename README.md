@@ -65,3 +65,12 @@ ssh-keygen -t rsa -f ~/.ssh/gcekey -C GMAIL_ACCOUNT
 ```
 cat ~/.ssh/gcekey.pub
 ```
+- Go to VM instance to add the `SSH key` to the instance: https://medium.com/@vipiny35/how-to-add-ssh-keys-in-google-cloud-vm-instance-fa04d9cf7102
+- Install SSH remote in vscode: https://code.visualstudio.com/docs/remote/ssh-tutorial
+- Config connection:
+```
+ssh -i ~/.ssh/gcekey GMAIL_ACOUNT@GCE_EXTERNAL_IP
+```
+- Now follow the steps can access the VM machine from vscode now (At least I can do it since the detail steps are too long to go.)
+
+## Backend structure
