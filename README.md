@@ -8,7 +8,7 @@ This is the project for a simple token-based tweeter-liked web application.
 <img src="https://github.com/blaticslm/simple-tweet-project/blob/main/repo%20picture/QQ%E6%88%AA%E5%9B%BE20220607083541.png"  width="500">
 </p>
 
-## Demo
+## Feature Demo
 https://www.youtube.com/watch?v=Il3r-cv5hOI
 
 This demo shows the following accomplishments : 
@@ -17,6 +17,12 @@ This demo shows the following accomplishments :
 - Users can only delete the post they created
 - Search by keywords and user names 
 - No need to refresh the web page to see the latest content update
+
+#### Improvement:
+https://youtu.be/mP0AG2MES6w
+- Now users can delete their own images as they like. 
+- There will be `Delete Fail` when the delete button is not disabled on another's post.
+- `There is no image to delete in the gallery!` pop-up window when users delete the empty picture. 
 
 ## Backend and Frontend structure
 <p align="center">
