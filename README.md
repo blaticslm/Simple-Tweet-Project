@@ -1,6 +1,6 @@
 # simple-tweet-project
-This is the project for a simple token-based tweeter-liked web application.
-This project is shutdown now.
+- This is the project for a simple token-based tweeter-liked web application.
+- This project is shutdown now.
 
 ## Screenshot
 <p align="center">
