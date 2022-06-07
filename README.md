@@ -21,7 +21,7 @@ This demo shows the following accomplishments :
 #### Improvement:
 https://youtu.be/mP0AG2MES6w
 - Now users can delete their own images without leaving the viewing mode (lightbox enable). 
-- There will be `Delete Fail` when the delete button is not disabled on another's post.
+- There will be `Delete Fail` when the delete button is not disabled on others' post.
 - `There is no image to delete in the gallery!` pop-up window when users delete the empty picture. 
 
 ## Backend and Frontend structure
