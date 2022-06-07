@@ -20,7 +20,7 @@ This demo shows the following accomplishments :
 
 ## Backend and Frontend structure
 <p align="center">
-<img src="https://github.com/blaticslm/simple-tweet-project/blob/main/repo%20picture/Backend_Frontend_diagram.png">
+<img src="https://github.com/blaticslm/simple-tweet-project/blob/main/repo%20picture/asdasdasdasd.png">
 </p>
 
 ## Program tools and environment 
