@@ -77,5 +77,4 @@ ssh -i ~/.ssh/gcekey GMAIL_ACOUNT@GCE_EXTERNAL_IP
 
 <p align="center">
 <img src="https://github.com/blaticslm/simple-tweet-project/blob/main/repo%20picture/Untitled%20Diagram.drawio.png">
-
 </p>
