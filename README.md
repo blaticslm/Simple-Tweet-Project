@@ -30,7 +30,7 @@ This demo shows the following accomplishments :
 - ElasticSearch database
 - Google Compute Engine and Cloud Storage
 
-## Front End Setup
+## Frontend Setup
 - Node.js install and setup: 
 https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows
 
@@ -40,7 +40,7 @@ npx create-react-app {PROJECT_NAME_FOLDER}
 cd {PROJECT_NAME_FOLDER}
 npm start
 ```
-## Back End Setup
+## Backend Setup
 #### Golang:
 - Download and Install golang: https://go.dev/dl/
 - Download golang extension in vscode: https://code.visualstudio.com/docs/languages/go
@@ -71,10 +71,49 @@ cat ~/.ssh/gcekey.pub
 ```
 ssh -i ~/.ssh/gcekey GMAIL_ACOUNT@GCE_EXTERNAL_IP
 ```
-- Now follow the steps can access the VM machine from vscode now (At least I can do it since the detail steps are too long to go.)
+- Connect to VM now
+
+#### ElasticSearch installation
+- In vscode remote terminal,run those lines: 
+```
+sudo apt install default-jre
+
+java -version
+
+sudo apt install apt-transport-https
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+
+sudo sh -c 'echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" > /etc/apt/sources.list.d/elastic-7.x.list'
+sudo apt update
+sudo apt install elasticsearch
+```
+- After installation, edit the configuration file
+```
+sudo vim /etc/elasticsearch/elasticsearch.yml
+```
+- Find those place to uncomment or add
+```
+network.host: 0.0.0.0
+http.port: {designated port of VM}
+discovery.type: single-node
+xpack.security.enabled: true
+```
+and verify
+```
+sudo cat /etc/elasticsearch/elasticsearch.yml|grep "^[^#;]"
+```
+- Start Elasticsearch and check status
+```
+sudo systemctl enable elasticsearch
+sudo systemctl status elasticsearch
+```
+- Enable the password and code for the elasticsearch
+```
+sudo /usr/share/elasticsearch/bin/elasticsearch-users useradd NEW_USER_NAME -p NEW_PASSWORD -r superuser
+```
+## Frontend structure
 
 ## Backend structure
-
 <p align="center">
 <img src="https://github.com/blaticslm/simple-tweet-project/blob/main/repo%20picture/Backend_diagram.png">
 </p>
