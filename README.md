@@ -18,6 +18,11 @@ This demo shows the following accomplishments :
 - Search by keywords and user names 
 - No need to refresh the web page to see the latest content update
 
+## Backend and Frontend structure
+<p align="center">
+<img src="https://github.com/blaticslm/simple-tweet-project/blob/main/repo%20picture/Backend_Frontend_diagram.png">
+</p>
+
 ## Program tools and environment 
 #### Front end:
 - Intellij
@@ -111,9 +116,4 @@ sudo systemctl status elasticsearch
 ```
 sudo /usr/share/elasticsearch/bin/elasticsearch-users useradd NEW_USER_NAME -p NEW_PASSWORD -r superuser
 ```
-## Frontend structure
 
-## Backend structure
-<p align="center">
-<img src="https://github.com/blaticslm/simple-tweet-project/blob/main/repo%20picture/Backend_diagram.png">
-</p>
