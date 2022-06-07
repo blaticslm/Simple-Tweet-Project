@@ -2,7 +2,7 @@
 This is the project for a simple tweeter-liked web application.
 
 ## Screenshot
-![Login Page](Login.jpg)
+![](https://github.com/blaticslm/simple-tweet-project/blob/main/repo%20picture/QQ%E6%88%AA%E5%9B%BE20220607083659.png)
 
 ## Demo
 https://www.youtube.com/watch?v=Il3r-cv5hOI
