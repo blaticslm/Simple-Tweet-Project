@@ -57,7 +57,7 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
     //暂时就三个初始化
     //From now on, the user info will directly come from payload.
     p := Post{
-        Id: username.(string) + uuid.New(), //universally unique identifier
+        Id: username.(string) + uuid.New(), //universally unique identifier --- MOST IMPORTANT!!!!!!!!!!!!!!!!!
         User: username.(string), //func (r *Request) FormValue(key string) string
         Message: r.FormValue("message"),
     }
