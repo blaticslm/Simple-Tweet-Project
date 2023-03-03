@@ -54,12 +54,13 @@ function Home(props) {
 
     //deleting the video --> directly delete from the local videoArray --> faster than refetch, so no synchronization problems!
 
+    //once the new post is coming, then the page will be rendered
     useEffect(() => {
         setVideoArray(posts != null? posts.filter((item) => item.type === "video") : [])
         setImageArray(posts != null? posts.filter((item) => item.type === "image") : [])
      },[posts])
 
-
+    //　When each time fetching, it will get all the videos and images from the server
     const fetchPos = (option) => {
         const {type, keyword} = option;
         let url; //scope is only existing in this function
